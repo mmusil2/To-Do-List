@@ -17,9 +17,6 @@ module.exports = function(app) {
 
   // GET route for getting all of the todos
   app.get("/api/todos", function(req, res) {
-    // orm.getTodos(function(results) {
-    //   res.json(results);
-    // });
     db.Todo.findAll({}).then(function(results) {
       res.json(results);
     });
